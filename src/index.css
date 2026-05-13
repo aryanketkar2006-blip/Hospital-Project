@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A56DB;
+  --color-primary-dark: #1344B0;
+  --color-primary-light: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+  --color-page-bg: #F9FAFB;
+  --color-light-gray: #F3F4F6;
+  --color-border: #E5E7EB;
+  --color-dark-text: #111827;
+  --color-body-text: #374151;
+  --color-muted: #6B7280;
+  --color-danger: #DC2626;
+  --color-warning: #D97706;
+  --color-success: #059669;
+  --color-sidebar: #111827;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base styles — Inter font, no gradients, no box-shadows, no glassmorphism */
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--color-body-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  color: var(--color-dark-text);
+}
+
+/* Page transition: 200ms opacity fade only */
+.page-enter {
+  opacity: 0;
+}
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+/* Button hover: 150ms color change only */
+button, a {
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+/* Focus ring — the only allowed shadow */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary) !important;
+  ring: 2px;
+  ring-color: var(--color-primary-border);
+}
+
+/* Remove default browser styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Scrollbar subtle styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-light-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
